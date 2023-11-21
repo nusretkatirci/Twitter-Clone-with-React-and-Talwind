@@ -6,9 +6,9 @@ body{
     @apply bg-black text-white
 }
 
-/* 
-    genişlik = 1265px
-    sol sidebar = 275px
-    sağ side bar = 350px
-    content alanı = auto
+/*
+    sol sidebar: 275px
+    sağ sidebar: 350px
+    content alanı : auto
+    genişlik: 1265
 */
