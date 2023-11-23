@@ -1,5 +1,6 @@
 import {Popover, Disclosure} from "@headlessui/react";
 import {Link} from "react-router-dom";
+import classNames from "classnames";
 
 export default function More() {
   return (
@@ -42,27 +43,34 @@ export default function More() {
               Para Kazanma
             </div>
           </button>
-        <Disclosure>
-          <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold w-full justify-between hover:bg-[#eff3f41a] transition-colors">
-            İçerik Üreticisi Stüdyosu
 
-            <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
-              <path
-                fill="#fff"
-                d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
-            />
-            </svg>
-          </Disclosure.Button>
-          <Disclosure.Panel className="text-white">
-            <Link to="/" className="flex items-center px-3 h-11 gap-3 text-[15px] font-medium hover:bg-[#eff3f41a] transition-colors">
-              <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
+        <Disclosure>
+          {({open} ) => (
+            <>
+            <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold w-full justify-between hover:bg-[#eff3f41a] transition-colors">
+              İçerik Üreticisi Stüdyosu
+
+              <svg className={classNames({
+                "rotate-180 text-[#1d9bf0]" : open
+              })} viewBox="0 0 24 24" width={18.75} height={18.75}>
                 <path
-                  fill="#e7e9ea"
-                  d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/>
+                  fill="currentColor"
+                  d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
+                />
               </svg>
-              İstatistikler
-            </Link>
-          </Disclosure.Panel>
+            </Disclosure.Button>
+            <Disclosure.Panel className="text-white">
+              <Link to="/" className="flex items-center px-3 h-11 gap-3 text-[15px] font-medium hover:bg-[#eff3f41a] transition-colors">
+                <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
+                  <path
+                    fill="#e7e9ea"
+                    d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/>
+                </svg>
+                İstatistikler
+              </Link>
+            </Disclosure.Panel>
+            </>
+          )}
         </Disclosure>
         <Disclosure>
           <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold w-full justify-between hover:bg-[#eff3f41a] transition-colors">
