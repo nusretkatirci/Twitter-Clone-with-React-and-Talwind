@@ -1,3 +1,7 @@
+import store from "~/store/index.js";
+
+const states = store.getState()
+
 export const mainMenu = [
   {
     path: '/',
@@ -61,7 +65,7 @@ export const mainMenu = [
     }
   },
   {
-    path: '/message',
+    path: '/messages',
     title: 'Mesajlar',
     notification: 4,
     icon: {
@@ -100,7 +104,7 @@ export const mainMenu = [
         </svg>
       )
     }
-  },,
+  },
   {
     path: '/bookmarks',
     title: 'Yer İşaretleri',
@@ -143,7 +147,7 @@ export const mainMenu = [
     }
   },
   {
-    path: '/profile',
+    path: `/${states?.auth?.currentAccount?.username}`,
     title: 'Profil',
     icon: {
       active: (
