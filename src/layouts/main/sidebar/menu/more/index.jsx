@@ -27,48 +27,48 @@ export default function More() {
       </Popover.Button>
       <Popover.Panel className="w-[318px] absolute bottom-0 left-0 bg-black shadow-box rounded-xl overflow-hidden">
 
-          <button
-            className="px-4 h-14 w-full transition-colors inline-flex items-center gap-5 hover:bg-[#eff3f41a]">
-            <div className="w-[26.25px] h-[26.25px] relative">
-              <svg viewBox="0 0 24 24" width={26.25} height={26.25}>
-                <path
-                  fill="#e7e9ea"
-                  d="M23 3v14h-2V5H5V3h18zM10 17c1.1 0 2-1.34 2-3s-.9-3-2-3-2 1.34-2 3 .9 3 2 3zM1 7h18v14H1V7zm16 10c-1.1 0-2 .9-2 2h2v-2zm-2-8c0 1.1.9 2 2 2V9h-2zM3 11c1.1 0 2-.9 2-2H3v2zm0 4c2.21 0 4 1.79 4 4h6c0-2.21 1.79-4 4-4v-2c-2.21 0-4-1.79-4-4H7c0 2.21-1.79 4-4 4v2zm0 4h2c0-1.1-.9-2-2-2v2z"
-                />
-              </svg>
+        <button
+          className="px-4 h-14 w-full transition-colors inline-flex items-center gap-5 hover:bg-[#eff3f41a]">
+          <div className="w-[26.25px] h-[26.25px] relative">
+            <svg viewBox="0 0 24 24" width={26.25} height={26.25}>
+              <path
+                fill="#e7e9ea"
+                d="M23 3v14h-2V5H5V3h18zM10 17c1.1 0 2-1.34 2-3s-.9-3-2-3-2 1.34-2 3 .9 3 2 3zM1 7h18v14H1V7zm16 10c-1.1 0-2 .9-2 2h2v-2zm-2-8c0 1.1.9 2 2 2V9h-2zM3 11c1.1 0 2-.9 2-2H3v2zm0 4c2.21 0 4 1.79 4 4h6c0-2.21 1.79-4 4-4v-2c-2.21 0-4-1.79-4-4H7c0 2.21-1.79 4-4 4v2zm0 4h2c0-1.1-.9-2-2-2v2z"
+              />
+            </svg>
 
-            </div>
+          </div>
 
-            <div className="pr-4 text-xl font-bold">
-              Para Kazanma
-            </div>
-          </button>
+          <div className="pr-4 text-xl font-bold">
+            Para Kazanma
+          </div>
+        </button>
         <div className="h-px bg-[#2f3336] my-0.5 w-[89%] mx-auto"/>
         <Disclosure>
           {({open} ) => (
             <>
-            <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold w-full justify-between hover:bg-[#eff3f41a] transition-colors">
-              İçerik Üreticisi Stüdyosu
+              <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold w-full justify-between hover:bg-[#eff3f41a] transition-colors">
+                İçerik Üreticisi Stüdyosu
 
-              <svg className={classNames({
-                "rotate-180 text-[#1d9bf0]" : open
-              })} viewBox="0 0 24 24" width={18.75} height={18.75}>
-                <path
-                  fill="currentColor"
-                  d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
-                />
-              </svg>
-            </Disclosure.Button>
-            <Disclosure.Panel className="text-white">
-              <Link to="/" className="flex items-center px-3 h-11 gap-3 text-[15px] font-medium hover:bg-[#eff3f41a] transition-colors">
-                <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
+                <svg className={classNames({
+                  "rotate-180 text-[#1d9bf0]" : open
+                })} viewBox="0 0 24 24" width={18.75} height={18.75}>
                   <path
-                    fill="#e7e9ea"
-                    d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/>
+                    fill="currentColor"
+                    d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
+                  />
                 </svg>
-                İstatistikler
-              </Link>
-            </Disclosure.Panel>
+              </Disclosure.Button>
+              <Disclosure.Panel className="text-white">
+                <Link to="/" className="flex items-center px-3 h-11 gap-3 text-[15px] font-medium hover:bg-[#eff3f41a] transition-colors">
+                  <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
+                    <path
+                      fill="#e7e9ea"
+                      d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/>
+                  </svg>
+                  İstatistikler
+                </Link>
+              </Disclosure.Panel>
             </>
           )}
         </Disclosure>

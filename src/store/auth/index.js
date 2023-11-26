@@ -8,6 +8,18 @@ const initialState = {
     avatar:"https://media.licdn.com/dms/image/D5603AQEqkDvJ_K4R3g/profile-displayphoto-shrink_800_800/0/1694723017885?e=2147483647&v=beta&t=HqTysNJqjIAfupJFHxEutWkwDbiHbPX9zInZKRV5mQM"
   },
   accounts:[
+    {
+      id:1,
+      username:"nusretktrc",
+      fullname:"Nusret",
+      avatar:"https://media.licdn.com/dms/image/D5603AQEqkDvJ_K4R3g/profile-displayphoto-shrink_800_800/0/1694723017885?e=2147483647&v=beta&t=HqTysNJqjIAfupJFHxEutWkwDbiHbPX9zInZKRV5mQM"
+    },
+    {
+      id:2,
+      username:"oyunns",
+      fullname:"OyunNS",
+      avatar:"https://media.licdn.com/dms/image/D5603AQEqkDvJ_K4R3g/profile-displayphoto-shrink_800_800/0/1694723017885?e=2147483647&v=beta&t=HqTysNJqjIAfupJFHxEutWkwDbiHbPX9zInZKRV5mQM"
+    }
   ]
 }
 
