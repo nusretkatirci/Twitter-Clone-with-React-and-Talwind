@@ -19,8 +19,9 @@ export default function Account(){
               @{account.username}
             </div>
           </div>
-          <svg viewBox="0 0 24 24" >
+          <svg viewBox="0 0 24 24" className="text-[#e7e9ea] ml-auto" width={18.75} height={18.75}>
             <path
+              fill="currentColor"
               d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
           </svg>
         </Popover.Button>
@@ -34,7 +35,9 @@ export default function Account(){
           >
         <Popover.Panel
           className="absolute bottom-[80px] -translate-y-2 py-3 w-[300px] z-[1] left-1/2 -translate-x-1/2  bg-black shadow-box rounded-2xl">
-          <More />
+          {({close}) =>(
+            <More close={close} />
+          )}
         </Popover.Panel>
         </Transition>
       </Popover>
