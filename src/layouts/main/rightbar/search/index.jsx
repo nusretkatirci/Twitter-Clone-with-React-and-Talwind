@@ -3,9 +3,10 @@ import {useState} from "react";
 export default function Search(){
 
   const [query, setQuery] = useState('')
+  const [focus, setFocus] = useState(false)
 
   return(
-    <div className="min-h-[32px] h-[53px] mb-3 flex items-center">
+    <div className="min-h-[32px] h-[53px] mb-3 flex items-center relative">
       <label className="h-[43px] rounded-full bg-[#202327] w-full relative group border border-transparent focus-within:bg-black focus-within:border-[#1d9bf0]">
         <div className="w-[56px] h-full flex items-center justify-center absolute top-0 left-0 pointer-events-none">
           <svg
@@ -22,13 +23,14 @@ export default function Search(){
           type="text"
           className="w-full h-full bg-transparent outline-none rounded-full pl-[56px] text-[15px]"
           value={query}
+          onFocus={()=> setFocus(true)}
           onChange={e => setQuery(e.target.value)}
         />
-        {query && (
+        {(query && focus) && (
           <button
             type="botton"
-            onClick={()=>setQuery('')}
-            className="w-[22px] h-[22px] rounded-full bg-[#1d9bf0] flex items-center justify-center text-black min-w-[22px] absolute top-1/2 -translate-y-1/2 right-3 invisible group-focus-within:visible"
+            onClick={() => setQuery('')}
+            className="w-[22px] h-[22px] rounded-full bg-[#1d9bf0] flex items-center justify-center text-black min-w-[22px] absolute top-1/2 -translate-y-1/2 right-3 "
           >
             <svg viewBox="0 0 15 15" width={10} height={10}>
             <path
@@ -36,6 +38,14 @@ export default function Search(){
               d="M6.09 7.5L.04 1.46 1.46.04 7.5 6.09 13.54.04l1.42 1.42L8.91 7.5l6.05 6.04-1.42 1.42L7.5 8.91l-6.04 6.05-1.42-1.42L6.09 7.5z"/>
             </svg>
           </button>
+        )}
+
+        { focus && (
+          <div className="absolute w-[350px] top-full -left-px translate-y-px bg-black shadow-box max-h-[calc(80vh-53px)] rounded-lg text-center min-h-[100px]">
+            <p className="p-3 pt-5 text-[#71767b] leading-5">
+              Kişileri, listeleri veya anahtar kelimeleri aramayı dene
+            </p>
+          </div>
         )}
       </label>
     </div>
