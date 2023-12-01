@@ -1,12 +1,21 @@
-import {useState} from "react";
+import {useRef, useState} from "react";
+import {useClickAway} from "react-use";
 
 export default function Search(){
 
   const [query, setQuery] = useState('')
   const [focus, setFocus] = useState(false)
 
+  const ref = useRef()
+  useClickAway(ref, ()=>{
+    setFocus(false)
+  })
+
   return(
-    <div className="min-h-[32px] h-[53px] mb-3 flex items-center relative">
+    <div
+      ref={ref}
+      className="min-h-[32px] h-[53px] mb-3 flex items-center sticky top-0 bg-black z-10"
+    >
       <label className="h-[43px] rounded-full bg-[#202327] w-full relative group border border-transparent focus-within:bg-black focus-within:border-[#1d9bf0]">
         <div className="w-[56px] h-full flex items-center justify-center absolute top-0 left-0 pointer-events-none">
           <svg
@@ -21,7 +30,8 @@ export default function Search(){
         </div>
         <input
           type="text"
-          className="w-full h-full bg-transparent outline-none rounded-full pl-[56px] text-[15px]"
+          placeholder="Ara"
+          className="w-full h-full bg-transparent placeholder-[#71767b] outline-none rounded-full pl-[56px] text-[15px]"
           value={query}
           onFocus={()=> setFocus(true)}
           onChange={e => setQuery(e.target.value)}
@@ -40,14 +50,17 @@ export default function Search(){
           </button>
         )}
 
-        { focus && (
-          <div className="absolute w-[350px] top-full -left-px translate-y-px bg-black shadow-box max-h-[calc(80vh-53px)] rounded-lg text-center min-h-[100px]">
-            <p className="p-3 pt-5 text-[#71767b] leading-5">
-              Kişileri, listeleri veya anahtar kelimeleri aramayı dene
-            </p>
-          </div>
-        )}
+
       </label>
+
+      { focus && (
+        <div className="absolute w-[350px] top-full -left-px -translate-y-1 bg-black shadow-box max-h-[calc(80vh-53px)] rounded-lg text-center min-h-[100px]">
+          <p className="p-3 pt-5 text-[#71767b] leading-5">
+            Kişileri, listeleri veya anahtar kelimeleri aramayı dene
+          </p>
+        </div>
+      )}
+
     </div>
   )
 }
