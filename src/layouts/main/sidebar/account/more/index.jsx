@@ -19,13 +19,13 @@ export default function More({close}){
             close()
           }}
           className={classNames("py-3 px-4 flex items-center text-left w-full transition-colors",{
-          "hover:bg-[#eff3f41a]" : currentAccount.id !== account.id
+          "hover:bg-[color:var(--background-secondary]" : currentAccount.id !== account.id
         })}
         >
           <img src={account.avatar} className="w-10 h-10 rounded-full" alt={account.username}  />
           <div className="mx-3 flex-1 text-[15px] ">
             <h6 className="font-bold leading-[20px]">{account.fullname}</h6>
-            <div className="text-[#71767b]">
+            <div className="text-[color:var(--color-base-secondary)]">
               @{account.username}
             </div>
           </div>
@@ -41,13 +41,13 @@ export default function More({close}){
 
       <div className="bg-[#2f3336] my-3 h-px" />
 
-      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full text-[#e7e9ea] text-[15px] font-bold  leading-[20px]">
+      <button className="py-3 px-4 text-left hover:bg-[color:var(--background-secondary] transition-colors w-full text-[15px] font-bold  leading-[20px]">
         Var olan bir hesap ekle
       </button>
-      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full text-[#e7e9ea] text-[15px] font-bold  leading-[20px]">
+      <button className="py-3 px-4 text-left hover:bg-[color:var(--background-secondary] transition-colors w-full text-[15px] font-bold  leading-[20px]">
         Hesapları yönet
       </button>
-      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full text-[#e7e9ea] text-[15px] font-bold leading-[20px]">
+      <button className="py-3 px-4 text-left hover:bg-[color:var(--background-secondary] transition-colors w-full text-[15px] font-bold leading-[20px]">
         <div className="max-w-[228px]">
           @prototurkcom hesabından çıkış yap
         </div>
